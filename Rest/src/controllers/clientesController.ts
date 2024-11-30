@@ -3,12 +3,13 @@ import { soapService } from '../services/soapService';
 import { ClientesService } from '../services/clientesService';
 import { CorreoExistente } from '../exceptions/correoExistente';
 import { PiezaInvalida } from '../exceptions/piezaInvalida';
+import { ClientesRepository } from '../repositories/clientesRepository'; 
 
 export class ClientesController {
     private clientesService: ClientesService;
 
     constructor(private piezasService: soapService) {
-        const clientesRepository = {}; // Replace with actual repository instance
+        const clientesRepository = new ClientesRepository(); 
         this.clientesService = new ClientesService(piezasService, clientesRepository);
     }
 
@@ -22,7 +23,16 @@ export class ClientesController {
                 res.status(404).json({ error: "Cliente no encontrado" });
             }
         } catch (error) {
-            res.status(500).json({ error: "Error en el servidor" });
+            if (error instanceof Error) {
+                res.status(500).json({ 
+                    error: "Error en el servidor", 
+                    message: error.message, 
+                    stack: error.stack 
+                });
+            } else {
+                res.status(500).json({ error: "Error en el servidor" });
+            }
+            
         }
     }
     

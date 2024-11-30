@@ -2,22 +2,22 @@ namespace Soap.Models
 {
     public class PiezaModel
     {
-        public Guid Id { get; set; } // Identificador único
+        public Guid Id { get; set; }
 
-        public string producto { get; set; } = string.Empty; // Nombre del producto
+        public string producto { get; set; } = string.Empty; 
 
-        public string categoria { get; set; } = string.Empty; // Categoría del producto
+        public string categoria { get; set; } = string.Empty; 
 
-        public decimal precio { get; set; } // Precio del producto
+        public decimal precio { get; set; } 
 
-        public string descripcion { get; set; } = string.Empty; // Descripción del producto
+        public string descripcion { get; set; } = string.Empty; 
 
-        public string codigo { get; set; } = string.Empty; // Código único del producto
+        public string codigo { get; set; } = string.Empty; 
 
-        public string marca { get; set; } = string.Empty; // Marca del producto
+        public string marca { get; set; } = string.Empty; 
 
-        public string stock { get; set; } = string.Empty; // Estado del stock (Disponible, Agotado, etc.)
+        public string stock { get; set; } = string.Empty; 
 
-        public string[] modelosvehiculos { get; set; } = Array.Empty<string>(); // Modelos de vehículos compatibles
+        public string[] modelosvehiculos { get; set; } = Array.Empty<string>(); 
     }
 }

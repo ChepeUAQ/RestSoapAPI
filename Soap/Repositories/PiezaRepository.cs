@@ -12,15 +12,13 @@ public class PiezaRepository : IPiezaRepository {
         _dbContext = dbContext;
     }public async Task<PiezaModel> GetByIdAsync(Guid id, CancellationToken cancellationToken)
 {
-    Console.WriteLine($"Buscando pieza con ID: {id}"); // Agregar log para ver el ID que se está pasando
-
     var pieza = await _dbContext.piezas
         .AsNoTracking()
         .FirstOrDefaultAsync(s => s.id.Equals(id), cancellationToken);
 
     if (pieza == null)
     {
-        Console.WriteLine($"Pieza con ID {id} no encontrada"); // Log cuando no se encuentra la pieza
+        Console.WriteLine($"Pieza con ID {id} no encontrada"); 
         throw new KeyNotFoundException($"Pieza con ID {id} no encontrada");
     }
 

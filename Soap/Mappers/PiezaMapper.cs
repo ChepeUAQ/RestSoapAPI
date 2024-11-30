@@ -7,7 +7,6 @@ namespace Soap.Mappers
 {
     public static class PiezaMapper
     {
-        // Mapea de entidad a modelo
         public static PiezaModel ToModel(this PiezaEntity pieza)
         {
             if (pieza is null)
@@ -29,7 +28,6 @@ namespace Soap.Mappers
             };
         }
 
-        // Mapea de modelo a DTO de respuesta
         public static PiezaResponseDto ToDto(this PiezaModel pieza)
         {
             return new PiezaResponseDto
@@ -45,8 +43,6 @@ namespace Soap.Mappers
                 modelosvehiculos = pieza.modelosvehiculos
             };
         }
-
-        // Mapea de modelo a entidad
         public static PiezaEntity ToEntity(this PiezaModel pieza)
         {
             return new PiezaEntity
@@ -62,8 +58,6 @@ namespace Soap.Mappers
                 modelosvehiculos = pieza.modelosvehiculos
             };
         }
-
-        // Mapea de DTO de creación a modelo
         public static PiezaModel ToModel(this PiezaCreateRequestDto pieza)
         {
             return new PiezaModel

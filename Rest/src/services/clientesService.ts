@@ -6,14 +6,15 @@ import { Pieza } from '../models/piezasModel';
 
 import { soapService } from './soapService';
 
-export class ClientesService {
-    private piezasService: soapService;
-    clientesRepository: any;
 
-    constructor(piezasService: soapService, clientesRepository: any) {
-        this.piezasService = piezasService;
-        this.clientesRepository = clientesRepository;
-    }
+export class ClientesService {
+  private soapService: soapService;
+  private clientesRepository: ClientesRepository; 
+
+  constructor(soapService: soapService, clientesRepository: ClientesRepository) {
+    this.soapService = soapService;
+    this.clientesRepository = clientesRepository;
+  }
 
     async getClienteById(id: string) {
         const Key = `cliente:${id}`;
@@ -23,7 +24,7 @@ export class ClientesService {
             const cliente = JSON.parse(clienteC);
             const productos = await Promise.all(
                 cliente.productosComprados.map(async (productoId: string) => {
-                    const producto = await this.piezasService.getPiezaById(productoId);
+                    const producto = await this.soapService.getPiezaById(productoId);
                     return producto ? producto : { mensaje: "Producto no encontrado" }; 
                 })
             );
@@ -37,7 +38,7 @@ export class ClientesService {
         if (cliente) {
             const productos = await Promise.all(
                 cliente.productosComprados.map(async (productoId: string) => {
-                    const producto = await this.piezasService.getPiezaById(productoId);
+                    const producto = await this.soapService.getPiezaById(productoId);
                     return producto ? producto : { mensaje: "Producto no encontrado" }; 
                 })
             );

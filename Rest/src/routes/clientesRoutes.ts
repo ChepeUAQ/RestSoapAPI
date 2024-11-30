@@ -4,9 +4,9 @@ import { soapService } from '../services/soapService';
 
 const router = Router();
 
-const wsdlUrl = 'http://localhost:8080/PiezaService.svc?wsdl';
+const wsdlUrl = 'http://host.docker.internal:8080/PiezaService.svc?wsdl';
 
-console.log('WSDL URL:', wsdlUrl); // Imprime el contenido de wsdlUrl
+console.log('WSDL URL:', wsdlUrl);
 
 if(wsdlUrl === undefined) {
     throw new Error('WSDL URL not found');
