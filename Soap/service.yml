@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: piezas-api-svc
+  namespace: jmmg-backend-api
+spec:
+  type: ClusterIP 
+  ports: 
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: piezas-api
