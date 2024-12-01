@@ -1,6 +1,5 @@
 import { ClientesRepository } from '../repositories/clientesRepository';
 import { CorreoExistente } from '../exceptions/correoExistente'; 
-import { redisClient } from '../config/redis';
 import { PiezaInvalida } from '../exceptions/piezaInvalida';
 import { Pieza } from '../models/piezasModel';
 
@@ -18,20 +17,6 @@ export class ClientesService {
 
     async getClienteById(id: string) {
         const Key = `cliente:${id}`;
-        const clienteC = await redisClient.get(Key);
-    
-        if (clienteC) {
-            const cliente = JSON.parse(clienteC);
-            const productos = await Promise.all(
-                cliente.productosComprados.map(async (productoId: string) => {
-                    const producto = await this.soapService.getPiezaById(productoId);
-                    return producto ? producto : { mensaje: "Producto no encontrado" }; 
-                })
-            );
-    
-            const clienteConProductos = { ...cliente, productos }; 
-            return clienteConProductos;
-        }
     
         const cliente = await this.clientesRepository.getClienteById(id);
     
@@ -44,7 +29,6 @@ export class ClientesService {
             );
     
             const clienteConProductos = { ...cliente, productos }; 
-            await redisClient.set(Key, JSON.stringify(clienteConProductos), { EX: 3600 });
     
             return clienteConProductos;
         }
