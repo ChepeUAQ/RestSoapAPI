@@ -1,6 +1,9 @@
 # Refaccionaria_API
 Esta API está diseñada para gestionar clientes y piezas en una refaccionaria, ofreciendo un conjunto de operaciones CRUD (Crear, Leer, Actualizar y Eliminar) para ambas entidades.
 
+> [!IMPORTANT]
+> Solo funciona SOAP
+
 - Entidades<br>
   - 🛠️ Piezas
     - Producto: Nombre del producto.
