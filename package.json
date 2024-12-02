@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "express": "^4.21.1",
     "mongoose": "^8.8.3",
-    "soap": "^1.1.6"
+    "soap": "^1.1.6",
+    "swagger-ui": "^5.18.2"
   },
   "devDependencies": {
     "@types/node": "^22.10.1"
