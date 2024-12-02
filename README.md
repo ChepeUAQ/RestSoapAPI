@@ -2,7 +2,7 @@
 Esta API está diseñada para gestionar clientes y piezas en una refaccionaria, ofreciendo un conjunto de operaciones CRUD (Crear, Leer, Actualizar y Eliminar) para ambas entidades.
 
 > [!IMPORTANT]
-> Solo funciona SOAP
+> En el cluster solo funciona la SoapAPI piezas-api, la RestAPI funciona únicamente fuera del cluster dentro de su propio contenedor de docker
 
 - Entidades<br>
   - 🛠️ Piezas
