@@ -2373,11 +2373,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rosas\\Documents\\Refaccionaria_SOAP_REST\\Soap\\Soap.csproj",
+      "projectUniqueName": "C:\\Users\\rosas\\Documents\\RestSoapAPI\\Soap\\Soap.csproj",
       "projectName": "Soap",
-      "projectPath": "C:\\Users\\rosas\\Documents\\Refaccionaria_SOAP_REST\\Soap\\Soap.csproj",
+      "projectPath": "C:\\Users\\rosas\\Documents\\RestSoapAPI\\Soap\\Soap.csproj",
       "packagesPath": "C:\\Users\\rosas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rosas\\Documents\\Refaccionaria_SOAP_REST\\Soap\\obj\\",
+      "outputPath": "C:\\Users\\rosas\\Documents\\RestSoapAPI\\Soap\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rosas\\AppData\\Roaming\\NuGet\\NuGet.Config"
