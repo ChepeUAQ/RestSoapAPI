@@ -4,7 +4,7 @@ import { soapService } from '../services/soapService';
 
 const router = Router();
 
-const wsdlUrl = 'http://host.docker.internal:8080/PiezaService.svc?wsdl';
+const wsdlUrl = 'http://piezas-api-svc:8080/PiezaService.svc?wsdl';
 
 console.log('WSDL URL:', wsdlUrl);
 

@@ -19,7 +19,7 @@ spec:
           env:
             - name: "UserServiceEndpoint"
               value: "http://piezas-api-svc.jmmg-backend-api.svc.cluster.local:8080/PiezaService.svc"
-            - name: "MongoDB__clientes__ConnectionString"
+            - name: "MongoDB__Groups__ConnectionString"
               valueFrom:
                 secretKeyRef:
                   name: clientes-api-secrets
